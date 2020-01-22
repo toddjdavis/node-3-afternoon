@@ -22,6 +22,8 @@ module.exports = {
     update: (req, res) => {
         const db = req.app.get('db')
         const {params, query} = req
+        console.log(`params ${params.id}`)
+        console.log(`query: ${query.desc}`)
         
         db.update_product([params.id, query.desc]).then(()=> {
             res.sendStatus(200)
